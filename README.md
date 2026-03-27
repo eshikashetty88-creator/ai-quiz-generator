@@ -26,6 +26,12 @@ Track A – Essential
 - Streamlit
 - LangChain (later)
 - SQLite
+## status
+week1 - setup & basic quiz generator
 
+## Team
+ESHIKA
+JEEVITHA
+CHANDAN
 ## Status
 🚧 Week 1 – Building basic quiz generator
