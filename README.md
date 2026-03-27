@@ -30,8 +30,8 @@ Track A – Essential
 week1 - setup & basic quiz generator
 
 ## Team
-ESHIKA
-JEEVITHA
-CHANDAN
+#ESHIKA
+#JEEVITHA
+#CHANDAN
 ## Status
 🚧 Week 1 – Building basic quiz generator
