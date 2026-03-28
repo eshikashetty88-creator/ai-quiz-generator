@@ -1,54 +1,95 @@
-# AI Educational Content Generator
+📘 AI Quiz Generator
 
-## Overview
-This project builds an AI-powered tutor that generates:
-- Quizzes
-- Flashcards
-- Audio summaries
+📌 Project Description
 
-from educational content like text and PDFs.
+AI Quiz Generator is an educational tool that converts study material into quizzes automatically. It helps students learn efficiently by generating questions, flashcards, and summaries from input text.
 
-## Track
-Track A – Essential
+---
 
-## Week 1 Goal
-- Input text
-- Generate quiz automatically
+🎯 Objectives
 
-## Features (Planned)
-- Quiz generation
-- Flashcards
-- Audio summaries (TTS)
-- Study progress tracking
+- Convert text into quiz questions automatically
+- Generate flashcards for revision
+- Provide audio summaries (future)
+- Track student learning progress
 
-## Tech Stack
+---
+
+⚙️ How It Works
+
+1. User inputs text or uploads a document
+2. Text is processed using Python
+3. AI generates quiz questions
+4. Results are displayed using Streamlit
+
+---
+
+🛠️ Tech Stack
+
 - Python
 - Streamlit
-- LangChain (later)
+- LangChain (planned)
 - SQLite
-## status
-week1 - setup & basic quiz generator
 
-## Team
-- ESHIKA
-- JEEVITHA
-- CHANDAN
-## Status
+---
+
+🚀 Features
+
+- Quiz generation
+- Flashcards (planned)
+- Audio summaries (planned)
+- Study progress tracking (planned)
+
+---
+
+📂 Project Structure
+
+- app.py → Main Streamlit app
+- quiz_generator.py → Quiz logic
+- database.db → Stores quiz data
+- requirements.txt → Dependencies
+- README.md → Documentation
+
+---
+
+🛠️ Installation
+
+1. Clone the repository
+   git clone https://github.com/your-username/ai-quiz-generator.git
+
+2. Install dependencies
+   pip install -r requirements.txt
+
+3. Run the app
+   streamlit run app.py
+
+---
+
+📊 Progress
+
+Week| Task| Status
+Week 1| Basic Quiz Generator| ✅ Completed
+Week 2| Flashcards| 🔄 In Progress
+
+---
+
+🚀 Future Enhancements
+
+- Add voice input
+- Improve UI design
+- Add multiple quiz formats
+- Integrate educational APIs
+
+---
+
+👥 Team
+
+- Eshika
+- Jeevitha
+- Chandan
+
+---
+
+📌 Status
 🚧 Week 1 – Building basic quiz generator
-import streamlit as st
-from quiz_generator import generate_quiz
 
-st.title("ai quiz generator")
-
-uploaded_file = st.file_uploader("Upload a PDF", type=["pdf"])
-
-text = st.text_area("enter study text")
-
-if st.button("Generate Quiz"):
-    if text:
-        quiz = generate_quiz(text)
-        st.subheader("Generated Quiz")
-        for q in quiz:
-            st.write(q)
-    else:
-        st.warning("Please enter some text to generate a quiz.")
