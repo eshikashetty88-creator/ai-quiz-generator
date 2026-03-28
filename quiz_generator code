@@ -1,0 +1,37 @@
+def generate_quiz(text):
+    return 
+
+    prompt = PromptTemplate(
+        input_variables=["text"],
+        template="""
+        )
+        return prompt.format(text=te
+
+Create 5 multiple choice questions (MCQs) based ONLY on the given text.
+
+Rules:
+- No generic questions
+- Each question must be factual from the text
+- Provide 4 options (A, B, C, D)
+- Only one correct answer
+-menction correct answer at the end of each question
+
+Format:
+
+Q1: Question
+A) Option
+B) Option
+C) Option
+D) Option
+Answer: A
+
+Text:
+{text}
+"""
+    )
+
+    chain = LLMChain(llm=llm, prompt=prompt)
+
+    result = chain.run(text[:1500])  # limit text size
+
+    return result
