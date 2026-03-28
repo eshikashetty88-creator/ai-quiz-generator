@@ -55,7 +55,7 @@ AI Quiz Generator is an educational tool that converts study material into quizz
 🛠️ Installation
 
 1. Clone the repository
-   git clone https://github.com/your-username/ai-quiz-generator.git
+   git clone (on progress)
 
 2. Install dependencies
    pip install -r requirements.txt
