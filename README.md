@@ -1,95 +1,40 @@
-📘 AI Quiz Generator
+# AI Educational Content Generator
 
-📌 Project Description
+## Overview
+This project builds an AI-powered tutor that generates:
+- Quizzes
+- Flashcards
+- Audio summaries
 
-AI Quiz Generator is an educational tool that converts study material into quizzes automatically. It helps students learn efficiently by generating questions, flashcards, and summaries from input text.
+from educational content like text and PDFs.
 
----
+## Track
+Track A – Essential
+# 📘 AI Quiz Generator
 
-🎯 Objectives
+## 📌 Project Description
+This project is an AI-powered quiz generator that converts study material into questions automatically. It helps students learn faster using interactive quizzes and smart content generation.
+## Week 1 Goal
+- Input text
+- Generate quiz automatically
 
-- Convert text into quiz questions automatically
-- Generate flashcards for revision
-- Provide audio summaries (future)
-- Track student learning progress
+## Features (Planned)
+- Quiz generation
+- Flashcards
+- Audio summaries (TTS)
+- Study progress tracking
 
----
-
-⚙️ How It Works
-
-1. User inputs text or uploads a document
-2. Text is processed using Python
-3. AI generates quiz questions
-4. Results are displayed using Streamlit
-
----
-
-🛠️ Tech Stack
-
+## Tech Stack
 - Python
 - Streamlit
-- LangChain (planned)
+- LangChain (later)
 - SQLite
 
----
-
-🚀 Features
-
-- Quiz generation
-- Flashcards (planned)
-- Audio summaries (planned)
-- Study progress tracking (planned)
-
----
-
-📂 Project Structure
-
-- app.py → Main Streamlit app
-- quiz_generator.py → Quiz logic
-- database.db → Stores quiz data
-- requirements.txt → Dependencies
-- README.md → Documentation
-
----
-
-🛠️ Installation
-
-1. Clone the repository
-   git clone (on progress)
-
-2. Install dependencies
-   pip install -r requirements.txt
-
-3. Run the app
-   streamlit run app/app.py
-
----
-
-📊 Progress
-
-Week| Task| Status
-Week 1| Basic Quiz Generator| ✅ Completed
-Week 2| Flashcards| 🔄 In Progress
-
----
-
-🚀 Future Enhancements
-
-- Add voice input
-- Improve UI design
-- Add multiple quiz formats
-- Integrate educational APIs
-
----
-
-👥 Team
-
-- Eshika
-- Jeevitha
-- Chandan
-
----
-
-📌 Status
+## 🔧 Import Statements
+```python
+import streamlit as st
+import random
+```
+## Status
 🚧 Week 1 – Building basic quiz generator
 
