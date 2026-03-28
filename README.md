@@ -1,26 +1,26 @@
 # AI Educational Content Generator
 
 ## Overview
-This project builds an AI-powered tutor that generates:
-- Quizzes
+This project builds an AI and plants tutor that generates:
+- Quizzes(mcq)
 - Flashcards
-- Audio summaries
+- Audio summaries(in progress)
 
 from educational content like text and PDFs.
 
 ## Track
 Track A – Essential
-# 📘 AI Quiz Generator
+# 📘 AI mcq-Quiz Generator
 
 ## 📌 Project Description
-This project is an AI-powered quiz generator that converts study material into questions automatically. It helps students learn faster using interactive quizzes and smart content generation.
+This project is an AI-powered mcq-quiz generator that converts study material into questions automatically. It helps students learn faster using interactive quizzes and smart content generation.
 
 ## Week 1 Goal
 - Input text
-- Generate quiz automatically
+- Generate mcq-quiz automatically
 ## ▶️ How to Run the Project
 
-Follow these steps to run the AI Quiz Generator:
+Follow these steps to run the AI mcq-Quiz Generator:
 
 ### 1️⃣ Clone the Repository
 ```bash
@@ -41,17 +41,16 @@ pip install -r requirements.txt
 
 ### 3️⃣ Run the Application
 ```bash
-streamlit run app.py
+streamlit run app/app.py
 ```
 
 ### 4️⃣ Open in Browser
-After running, open:
-http://localhost:8501
+After running, enter a text or topic
 
 ---
 
 ## Features (Planned)
-- Quiz generation
+-mcq-Quiz generation
 - Flashcards
 - Audio summaries (TTS)
 - Study progress tracking
@@ -59,8 +58,7 @@ http://localhost:8501
 ## Tech Stack
 - Python
 - Streamlit
-- LangChain (later)
-- SQLite
+- app
 
 ## 🔧 Import Statements
 ```python
@@ -77,7 +75,7 @@ def generate_quiz(text):
         words = s.strip().split()
         if len(words) > 4:
             blank_word = random.choice(words)
-            question = s.replace(blank_word, "_____")
+            question = s.replace(choose answer")
             questions.append((question, blank_word))
 
     return questions
@@ -85,11 +83,14 @@ def generate_quiz(text):
 ## 📤 Output Example
 
 Input:
-Python is a programming language. It is easy to learn.
+Python is which kind of language?
 
 Output:
-Q1: Python is a _____ language  
-Q2: It is easy to _____
+a:programming language
+b:markup language
+c:database language
+d:operating language
+
 ## Status
 🚧 Week 1 – Building basic quiz generator
 
