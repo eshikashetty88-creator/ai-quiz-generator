@@ -61,7 +61,7 @@ AI Quiz Generator is an educational tool that converts study material into quizz
    pip install -r requirements.txt
 
 3. Run the app
-   streamlit run app.py
+   streamlit run app/app.py
 
 ---
 
