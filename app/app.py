@@ -51,6 +51,7 @@ def generate_mcq(topic):
             "options":["mitochondria","chloroplasts","nucleus","ribosomes"],
             "answer":"chloroplasts"
         },
+        
         {
             "question": f"what is the role of sunlight in photosynthesis?",
             "options":["provides energy","breaks down glucose","absorbs water","produces carbon dioxide"],
