@@ -1,11 +1,11 @@
 import streamlit as st
-import PyPDF2
+import pypdf
 
 # -------------------------
 # PDF TEXT EXTRACTION
 # -------------------------
 def extract_text_from_pdf(uploaded_file):
-    reader = PyPDF2.PdfReader(uploaded_file)
+    reader = pypdf.PdfReader(uploaded_file)
     text = ""
     for page in reader.pages:
         text += page.extract_text()
@@ -78,7 +78,7 @@ if uploaded_file:
             st.caption(f"✔ Correct Answer: {q['answer']}")
             st.divider()
 import streamlit as st
-import PyPDF2
+import pypdf
 import random
 import re
 
