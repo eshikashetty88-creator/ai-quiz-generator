@@ -91,36 +91,45 @@ b:markup language
 c:database language
 d:operating language
 
-📅 Week 3–4: Quiz Generation, Flashcards & Score Evaluation
-During Week 3 and Week 4, the project was enhanced with advanced AI-based learning features focused on content understanding, assessment, and progress tracking.
-🔹 Key Features Implemented
-PDF Upload & Text Extraction
-Users can upload AI-related PDF documents.
-Text is extracted automatically using document processing techniques.
-AI-Based Quiz Generator (MCQs)
-Multiple-choice questions are generated from the uploaded content.
-Each quiz includes questions, multiple options, and correct answers.
-Users can attempt quizzes directly in the application.
-Quiz Scoring System
-User responses are evaluated.
-Final score is calculated and displayed after quiz submission.
-Correct answers are shown for learning reinforcement.
-Flashcard Generator
-Important AI concepts are converted into flashcards.
-Each flashcard displays a concept title and its explanation.
-Improves quick revision and concept clarity.
-Interactive Streamlit Interface
-Buttons for generating quizzes and flashcards.
-Expandable cards for better UI/UX.
-Real-time feedback messages (success, score display).
-🔹 Technologies Used
-Python
-Streamlit (Frontend & UI)
-PDF Processing
-AI-based text analysis
-GitHub for version control
-🔹 Outcome
-By the end of Week 3–4, the application evolved into a complete AI-powered learning assistant capable of:
-Reading study material from PDFs
-Generating quizzes and flashcards
-Evaluating user performance with scores
+---------------------------------------------------------------------------------------------------------------------------
+
+
+📅 Week 3–4: Core Educational Agent Architecture
+🎯 Goal
+Transform the application into a multi-functional educational assistant capable of processing study material and generating diverse learning resources automatically.
+🔹 Implementation Description (Mapped to Checklist)
+##✅ Integration of Educational Tools
+The system integrates document processing and quiz generation as core educational tools. Uploaded documents are processed to extract text, which is then used to generate quizzes and flashcards dynamically.
+
+##✅ Question Difficulty Levels
+Basic difficulty levels—Easy, Medium, and Hard—are implemented to categorize quiz questions. This allows learners to progressively test their understanding based on complexity.
+
+##✅ Multiple Quiz Formats
+The educational agent supports multiple quiz formats:
+Multiple Choice Questions (MCQs)
+True/False questions
+Fill-in-the-blanks questions
+These formats improve engagement and assess learning from different perspectives.
+
+##✅ Flashcard Review System
+A simple flashcard system is implemented where key AI concepts are converted into question-answer pairs. Flashcards are displayed using expandable sections for easy review and quick revision.
+
+##✅ Multiple Document Format Support
+The system handles different study material formats, including:
+PDF files
+TXT files
+DOCX files
+This ensures flexibility for users to upload various learning resources.
+
+##✅ Study Progress Tracking
+Basic study progress tracking is added by:
+Evaluating quiz responses
+Calculating and displaying user scores
+Showing correct answers after quiz submission
+This helps users measure their understanding and learning progress.
+🏁 Milestone Achieved
+By the end of Week 3–4, the educational agent successfully:
+Generates multiple types of educational content
+Supports document-based learning
+Provides interactive quizzes, flashcards, and scoring
+The system now functions as a core educational AI assistant designed for intelligent learning support.
