@@ -91,6 +91,45 @@ b:markup language
 c:database language
 d:operating language
 
-## Status
-🚧 Week 1 – Building basic quiz generator
+---------------------------------------------------------------------------------------------------------------------------
 
+
+📅 Week 3–4: Core Educational Agent Architecture
+🎯 Goal
+Transform the application into a multi-functional educational assistant capable of processing study material and generating diverse learning resources automatically.
+🔹 Implementation Description (Mapped to Checklist)
+##✅ Integration of Educational Tools
+The system integrates document processing and quiz generation as core educational tools. Uploaded documents are processed to extract text, which is then used to generate quizzes and flashcards dynamically.
+
+##✅ Question Difficulty Levels
+Basic difficulty levels—Easy, Medium, and Hard—are implemented to categorize quiz questions. This allows learners to progressively test their understanding based on complexity.
+
+##✅ Multiple Quiz Formats
+The educational agent supports multiple quiz formats:
+Multiple Choice Questions (MCQs)
+True/False questions
+Fill-in-the-blanks questions
+These formats improve engagement and assess learning from different perspectives.
+
+##✅ Flashcard Review System
+A simple flashcard system is implemented where key AI concepts are converted into question-answer pairs. Flashcards are displayed using expandable sections for easy review and quick revision.
+
+##✅ Multiple Document Format Support
+The system handles different study material formats, including:
+PDF files
+TXT files
+DOCX files
+This ensures flexibility for users to upload various learning resources.
+
+##✅ Study Progress Tracking
+Basic study progress tracking is added by:
+Evaluating quiz responses
+Calculating and displaying user scores
+Showing correct answers after quiz submission
+This helps users measure their understanding and learning progress.
+🏁 Milestone Achieved
+By the end of Week 3–4, the educational agent successfully:
+Generates multiple types of educational content
+Supports document-based learning
+Provides interactive quizzes, flashcards, and scoring
+The system now functions as a core educational AI assistant designed for intelligent learning support.
