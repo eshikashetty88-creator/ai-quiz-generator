@@ -91,6 +91,36 @@ b:markup language
 c:database language
 d:operating language
 
-## Status
-🚧 Week 1 – Building basic quiz generator
-
+📅 Week 3–4: Quiz Generation, Flashcards & Score Evaluation
+During Week 3 and Week 4, the project was enhanced with advanced AI-based learning features focused on content understanding, assessment, and progress tracking.
+🔹 Key Features Implemented
+PDF Upload & Text Extraction
+Users can upload AI-related PDF documents.
+Text is extracted automatically using document processing techniques.
+AI-Based Quiz Generator (MCQs)
+Multiple-choice questions are generated from the uploaded content.
+Each quiz includes questions, multiple options, and correct answers.
+Users can attempt quizzes directly in the application.
+Quiz Scoring System
+User responses are evaluated.
+Final score is calculated and displayed after quiz submission.
+Correct answers are shown for learning reinforcement.
+Flashcard Generator
+Important AI concepts are converted into flashcards.
+Each flashcard displays a concept title and its explanation.
+Improves quick revision and concept clarity.
+Interactive Streamlit Interface
+Buttons for generating quizzes and flashcards.
+Expandable cards for better UI/UX.
+Real-time feedback messages (success, score display).
+🔹 Technologies Used
+Python
+Streamlit (Frontend & UI)
+PDF Processing
+AI-based text analysis
+GitHub for version control
+🔹 Outcome
+By the end of Week 3–4, the application evolved into a complete AI-powered learning assistant capable of:
+Reading study material from PDFs
+Generating quizzes and flashcards
+Evaluating user performance with scores
