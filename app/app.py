@@ -1,11 +1,11 @@
 import streamlit as st
-import pypdf
+from PyPDF2 import pdfReader
 
 # -------------------------
 # PDF TEXT EXTRACTION
 # -------------------------
 def extract_text_from_pdf(uploaded_file):
-    reader = pypdf.PdfReader(uploaded_file)
+    reader = pdfReader(uploaded_file)
     text = ""
     for page in reader.pages:
         text += page.extract_text()
