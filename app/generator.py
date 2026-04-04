@@ -1,36 +1,97 @@
-from openai import OpenAI
-
-client = OpenAI(api_key="sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-
 def generate_quiz(text):
-    response = client.chat.completions.create(
-        model="gpt-4.1-mini",
-        messages=[
-            {"role": "user", "content": f"generate ""
-Generate:
-1. 5 MCQs with options and answers
-2. 3 short questions
+    return 
 
-Content:
+    prompt = PromptTemplate(
+        input_variables=["text"],
+        template="""
+        )
+        return prompt.format(text=te
+
+Create 5 multiple choice questions (MCQs) based ONLY on the given text.
+
+Rules:
+- No generic questions
+- Each question must be factual from the text
+- Provide 4 options (A, B, C, D)
+- Only one correct answer
+-menction correct answer at the end of each question
+
+Format:
+
+Q1: Question
+A) Option
+B) Option
+C) Option
+D) Option
+Answer: A
+
+Text:
 {text}
-"""}
-        ]
+"""
     )
-    return response.choices[0].message.content
 
+import random
+
+# -------------------------------
+# QUIZ GENERATOR
+# -------------------------------
+
+def generate_quiz(text, level="Easy"):
+    if not text or len(text.strip()) < 50:
+        return []
+
+    sentences = [
+        s.strip()
+        for s in text.replace("\n", " ").split(".")
+        if len(s.strip()) > 40
+    ]
+
+    if level == "Easy":
+        q_count = 3
+    elif level == "Medium":
+        q_count = 5
+    else:
+        q_count = 7
+
+    selected = random.sample(sentences, min(q_count, len(sentences)))
+
+    quiz = []
+
+    for sent in selected:
+        quiz.append({
+            "question": f"What does the following statement explain?\n\n{sent}",
+            "options": [
+                "Artificial Intelligence concept",
+                "Computer Hardware topic",
+                "Networking concept",
+                "Operating System feature"
+            ],
+            "answer": "Artificial Intelligence concept"
+        })
+
+    return quiz
+
+
+# -------------------------------
+# FLASHCARD GENERATOR
+# -------------------------------
 
 def generate_flashcards(text):
-    response = client.chat.completions.create(
-        model="gpt-4.1-mini",
-        messages=[
-            {"role": "user", "content": f"""
-Create 5 flashcards in Q/A format from this:
+    if not text or len(text.strip()) < 50:
+        return []
 
-{text}
-"""}
-        ]
-    )
-    return response.choices[0].message.content
-    }
+    sentences = [
+        s.strip()
+        for s in text.replace("\n", " ").split(".")
+        if len(s.strip()) > 40
     ]
-    )
+
+    flashcards = []
+
+    for sent in sentences[:5]:
+        flashcards.append({
+            "question": "Explain this concept:",
+            "answer": sent
+        })
+
+    return flashcards

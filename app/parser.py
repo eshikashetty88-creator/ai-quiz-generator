@@ -1,15 +1,12 @@
-from pyPDF2 import PdfReader
+from PyPDF2 import PdfReader
 
-def extract_text_from_pdf(file):
-    reader = PdfReader(file)
+def extract_text_from_pdf(uploaded_file):
     text = ""
-    
-    for page in reader.pages:
-        if page.extract_text():
-            text += page.extract_text()
-    
-    return text
 
-with open("sample.pdf", "rb") as file:
-    text = extract_text_from_pdf(file)
-    print(text)
+    reader = PdfReader(uploaded_file)
+    for page in reader.pages:
+        page_text = page.extract_text()
+        if page_text:
+            text += page_text + "\n"
+
+    return text
