@@ -10,11 +10,15 @@ if st.button("Generate Quiz"):
     for q in quiz:
         st.write(q)
         from gtts import gTTS
-import tempfile
 from app.generator import generate_audio_summary
-def generate_audio_summary(text):
-    summary = text[:800]
-    tts = gTTS(summary)
-    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
-    tts.save(temp_file.name)
-    return temp_file.name
+from app.document_loader import load_pdf
+
+uploaded_file = st.file_uploader("Upload PDF", type=["pdf"])
+
+if uploaded_file is not None:
+    pdf_text = load_pdf(uploaded_file)
+    st.success("PDF uploaded successfully")
+
+    if st.button("🔊 Generate Audio Summary"):
+        audio_file = generate_audio_summary(pdf_text)
+        st.audio(audio_file)

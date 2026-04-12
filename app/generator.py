@@ -95,3 +95,11 @@ def generate_flashcards(text):
         })
 
     return flashcards
+import tempfile
+from app.generator import generate_audio_summary
+def generate_audio_summary(text):
+    summary = text[:800]
+    tts = gTTS(summary)
+    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
+    tts.save(temp_file.name)
+    return temp_file.name
