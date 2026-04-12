@@ -1,7 +1,7 @@
 from pypdf import PdfReader
 import docx
 
-def load_document(uploaded_file):
+def load_pdf(uploaded_file):
     text = ""
 
     if uploaded_file.name.endswith(".pdf"):
@@ -16,5 +16,5 @@ def load_document(uploaded_file):
         doc = docx.Document(uploaded_file)
         for para in doc.paragraphs:
             text += para.text + "\n"
-
+    
     return text

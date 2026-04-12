@@ -1,4 +1,5 @@
 streamlit
 pypdf
 python-docx
-gTTS
+gTTSS
+PyPDF2

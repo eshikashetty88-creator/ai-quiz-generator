@@ -1,4 +1,5 @@
 def generate_quiz(text):
+    from app.quiz_generator import generate_quiz
     return [
         {
             "question": f"What is the main idea of: {text[:50]}?",
