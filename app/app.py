@@ -86,7 +86,7 @@ import re
 # PDF TEXT EXTRACTION
 # -----------------------------
 def extract_text_from_pdf(uploaded_file):
-    reader = PyPDF2.PdfReader(uploaded_file)
+    reader = pypdf.PdfReader(uploaded_file)
     text = ""
     for page in reader.pages:
         if page.extract_text():

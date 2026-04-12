@@ -133,3 +133,41 @@ Generates multiple types of educational content
 Supports document-based learning
 Provides interactive quizzes, flashcards, and scoring
 The system now functions as a core educational AI assistant designed for intelligent learning support.
+# Educational Content Generator AI (Week 3–4)
+
+## Project Overview
+This project is an AI-powered educational assistant that generates quizzes and flashcards from uploaded educational documents such as PDFs.
+
+## Features
+- Upload PDF documents
+- Automatic quiz generation (MCQ)
+- Flashcard generation
+- Quiz scoring system
+- Simple and interactive Streamlit UI
+- Study-friendly learning tool
+
+## Tech Stack
+- Python
+- Streamlit
+- PyPDF
+- NLP-based text processing
+
+## How to Run Locally
+1. Clone the repository
+2. Install dependencies:
+   pip install -r requirements.txt
+3. Run the app:
+   streamlit run app.py
+
+## Deployment
+The application is deployed on Streamlit Cloud.
+
+🔗 **Live App Link:**  
+https://ai-quiz-generator-hktmvuyz2ivbsgk9grdtxk.streamlit.app/
+
+## Week 3–4 Objectives Completed
+- Document processing (PDF upload)
+- Quiz generation
+- Flashcard system
+- Score tracking
+- Educational content generation
