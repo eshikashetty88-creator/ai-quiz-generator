@@ -190,3 +190,12 @@ if uploaded_pdf:
                 st.write(card["content"])
     else:
         st.info("Click the button to generate flashcards based on key AI concepts found in the PDF.")
+from gtts import gTTS
+import tempfile
+import os
+def generate_audio_summary(text):
+    summary = text[:800]  # short summary
+    tts = gTTS(summary)
+    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
+    tts.save(temp_file.name)
+    return temp_file.name
