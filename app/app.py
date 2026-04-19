@@ -1,6 +1,10 @@
+import pyttsx3
 import streamlit as st
+st.title("education content generator")
 from pypdf import PdfReader
-
+from utils import clean_text
+import json
+from datetime import datetime
 # -------------------------
 # PDF TEXT EXTRACTION
 # -------------------------
@@ -55,7 +59,7 @@ def generate_ai_mcq():
 # -------------------------
 st.set_page_config(page_title="AI Quiz Generator", layout="centered")
 
-st.title("📘 AI Quiz Generator (Week 1–2)")
+st.title("📘 AI Quiz Generator ")
 st.write("Upload a PDF and generate basic AI quiz questions")
 
 uploaded_file = st.file_uploader("📄 Upload PDF", type=["pdf"])
@@ -97,34 +101,29 @@ def extract_text_from_pdf(uploaded_file):
 # -----------------------------
 # CREATE MCQ QUESTIONS FROM TEXT
 # -----------------------------
-def generate_mcq_from_text(text):
-    sentences = [s.strip() for s in text.split(".") if len(s.strip()) > 40]
+import random
 
-    if len(sentences) < 2:
-        return []
+def generate_quiz(text):
+    sentences = [s.strip() for s in text.split('.') if len(s.strip()) > 20]
 
-    questions = []
-    selected = random.sample(sentences, min(3, len(sentences)))
+    quiz = []
 
-    for sent in selected:
-        question = f"What does the following statement describe?\n\n{sent[:120]}..."
-        options = [
-            "Artificial Intelligence",
-            "Machine Learning",
-            "Data Science",
-            "Computer Networks"
-        ]
-        answer = "Artificial Intelligence"
+    for i in range(min(5, len(sentences))):
+        correct = sentences[i]
 
-        questions.append({
-            "question": question,
+        # pick random wrong answers
+        wrong = random.sample(sentences, min(3, len(sentences)))
+
+        options = wrong + [correct]
+        random.shuffle(options)
+
+        quiz.append({
+            "question": f"What is meant by: {correct[:60]}?",
             "options": options,
-            "answer": answer
+            "answer": correct
         })
 
-    return questions
-
-
+    return quiz
 # -----------------------------
 # CREATE FLASHCARDS FROM TEXT
 # -----------------------------
@@ -153,7 +152,7 @@ def generate_flashcards(text):
 # -----------------------------
 st.set_page_config(page_title="AI Quiz Generator", layout="centered")
 
-st.title("🤖 AI Quiz & Flashcard Generator (Week 3–4)")
+st.title("🤖 AI Quiz & Flashcard Generator ")
 st.write("Upload an AI-related PDF to generate quizzes and flashcards")
 
 uploaded_pdf= st.file_uploader("📄 Upload PDF", type=["pdf"], key="main_pdf_uploader")
@@ -165,7 +164,7 @@ if uploaded_pdf:
     # QUIZ SECTION
     st.subheader("📝 Quiz Generator")
     if st.button("Generate Quiz"):
-        quiz = generate_mcq_from_text(text)
+        quiz = generate_quiz(text)
 
         if quiz:
             for i, q in enumerate(quiz, start=1):
@@ -190,12 +189,30 @@ if uploaded_pdf:
                 st.write(card["content"])
     else:
         st.info("Click the button to generate flashcards based on key AI concepts found in the PDF.")
-from gtts import gTTS
-import tempfile
-import os
-def generate_audio_summary(text):
-    summary = text[:800]  # short summary
-    tts = gTTS(summary)
-    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
-    tts.save(temp_file.name)
-    return temp_file.name
+
+from audio import generate_audio
+import PyPDF2
+
+def extract_text_from_pdf(file):
+    reader = PyPDF2.PdfReader(file)
+    text = ""
+    for page in reader.pages:
+        text += page.extract_text()
+    return text
+
+
+# -------- AUDIO SECTION --------
+st.header("🔊 Audio Summary")
+
+audio_pdf = st.file_uploader("Upload PDF for Audio", type=["pdf"], key="audio")
+
+if audio_pdf:
+    text = extract_text_from_pdf(audio_pdf)
+
+    if st.button("Generate Audio"):
+        audio_file, summary = generate_audio(text)
+
+        st.subheader("📄 Summary")
+        st.write(summary)
+
+        st.audio(audio_file)

@@ -1,3 +1,4 @@
+from pydoc import text
 import sys
 import os
 
@@ -5,7 +6,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 from app import quiz_generator
 from app import quiz_generator
 import streamlit as st
-from app.generator import generate_quiz, generate_audio_summary
+from app.generator import generate_flashcards, generate_quiz, generate_audio_summary
 from app.document_loader import load_pdf
 
 st.title("AI Quiz Generator")
@@ -28,12 +29,22 @@ if st.button("Generate Quiz"):
 
 # 👉 AUDIO SUMMARY
 if st.button("Generate Audio Summary"):
-    audio_file = generate_audio_summary(pdf_text)
+    audio = generate_audio_summary(pdf_text)
 
-    import os
-    if os.path.exists(audio_file):
-        with open(audio_file, "rb") as f:
-            st.audio(f.read(), format="audio/mp3")
+    if audio:
+        st.audio(audio, format="audio/mp3")
     else:
-        st.error("Audio file not created")
-        
+        st.error("Audio not generated")
+        if st.button("Test Audio"):
+            audio = generate_audio_summary("Hello this is a test audio")
+
+    if audio:
+        st.audio(audio, format="audio/mp3")
+   
+# 👉 GENERATE FLASHCARDS
+if st.button("Generate Flashcards"):
+    if pdf_text:
+        flashcards = generate_flashcards(pdf_text)
+        st.write(flashcards)
+    else:
+        st.warning("Please upload a file or enter text")

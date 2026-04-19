@@ -1,1 +1,14 @@
-[{"score": 0, "topic": "Uploaded Content"}, {"score": 0, "topic": "Uploaded Content"}, {"score": 0, "topic": "Uploaded Content"}, {"score": 0, "topic": "Uploaded Content"}, {"score": 1}]
+[
+  {
+    "topic": "Uploaded Content",
+    "score": 80,
+    "date": "2026-04-19",
+    "difficulty": "easy"
+  },
+  {
+    "topic": "Uploaded Content",
+    "score": 70,
+    "date": "2026-04-19",
+    "difficulty": "medium"
+  }
+]

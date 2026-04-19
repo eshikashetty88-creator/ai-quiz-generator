@@ -1,6 +1,6 @@
+gTTS
+openai
 streamlit
 pypdf
 python-docx
-gTTS
 PyPDF2
-openai

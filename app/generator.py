@@ -31,6 +31,7 @@ Text:
     )
 
 import random
+from turtle import st
 
 # -------------------------------
 # QUIZ GENERATOR
@@ -59,7 +60,7 @@ def generate_quiz(text, level="Easy"):
 
     for sent in selected:
         quiz.append({
-            "question": f"What does the following statement explain?\n\n{sent}",
+            "question": f"\n\n{sent}",
             "options": [
                 "Artificial Intelligence concept",
                 "Computer Hardware topic",
@@ -95,11 +96,31 @@ def generate_flashcards(text):
         })
 
     return flashcards
-import tempfile
+
+# -------------------------------
+# AUDIO SUMMARY GENERATOR
+# -------------------------------
 from gtts import gTTS
-import os
-def generate_audio_summary(summary_text):
-    tts = gTTS(summary_text)
-    audio_file = "summary.mp3"
-    tts.save(audio_file)
-    return audio_file
+import tempfile
+import streamlit as st
+
+def generate_audio_summary(text):
+    try:
+        if not text:
+            return None
+
+        summary = text[:200]
+
+        tts = gTTS(text=summary, lang='en')
+
+        temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
+        tts.save(temp_file.name)
+
+        with open(temp_file.name, "rb") as f:
+            audio_bytes = f.read()
+
+        return audio_bytes
+
+    except Exception as e:
+        st.error(f"Audio Error: {e}")
+        return None
